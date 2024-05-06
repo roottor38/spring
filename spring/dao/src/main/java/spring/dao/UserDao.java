@@ -8,6 +8,10 @@ public abstract class UserDao {
 
     private SimpleConnectionMaker simpleConnectionMaker;
 
+    public UserDao() {
+        simpleConnectionMaker = new SimpleConnectionMaker();
+    }
+
     public void add(User user) throws SQLException, ClassNotFoundException {
         Connection c = simpleConnectionMaker.makeNewConnection();
 
