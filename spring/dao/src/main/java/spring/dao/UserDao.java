@@ -4,12 +4,9 @@ import spring.dto.User;
 
 import java.sql.*;
 
-public class UserDao {
+public abstract class UserDao {
 
-    public Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection("jdbc:mysql://localhost:330", "spring", "book");
-    }
+    public abstract Connection getConnection() throws ClassNotFoundException, SQLException;
 
     public void add(User user) throws SQLException, ClassNotFoundException {
         Connection c = getConnection();
