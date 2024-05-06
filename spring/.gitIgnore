@@ -22,3 +22,5 @@ logs
 Thumbs.db
 
 /local-test-dir
+.gradle
+build/
