@@ -1,17 +1,18 @@
 package spring;
 
+import spring.dao.DConnectionMaker;
 import spring.dao.DUserDao;
 import spring.dao.NUserDao;
 import spring.dao.UserDao;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        UserDao dUserDao = new DUserDao();
-        UserDao nUserDao = new NUserDao();
+        DConnectionMaker c = new DConnectionMaker();
 
-        System.out.println(dUserDao.get("1"));
+        UserDao dao = new UserDao(c);
 
     }
 }
